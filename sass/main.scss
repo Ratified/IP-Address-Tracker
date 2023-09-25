@@ -1,0 +1,114 @@
+@import 'reset';
+@import 'typography';
+@import 'colors';
+
+body{
+    font-family: $fontRubik;
+    font-weight: get-weight('regular');
+    height: 100vh;
+}
+
+#header{
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-image:url('../images/pattern-bg-desktop.png');
+    position: relative;
+
+    .ip-h1{
+        font-size: 1.5rem;
+        font-weight: get-weight('bold');
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    form{
+        display: flex;
+        align-items: center;
+        margin-top: -80px;
+        width: 100%;
+
+        input{
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 4rem;
+            font-size: 1rem;
+            font-weight: get-weight('medium');
+            margin: 1rem 0;
+
+            @media(max-width: 600px){
+                padding: 0.5rem 2rem;
+            }
+        }
+
+    
+        button{
+            border: none;
+            border-radius: 5px;
+            padding: 0.8rem;
+            font-size: 1rem;
+            font-weight: get-weight('medium');
+            margin: 1rem 0;
+            background-color: $black;
+            color: white;
+        }
+
+    }
+}
+
+.user-details{
+    position: relative;
+    top: -40px;
+    background-color: $white;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 1000000;
+    padding: 1rem 2rem;
+
+    .details{
+        display: grid;
+        justify-content: center;
+
+        .title{
+            color: $Dark-Gray;
+            text-align: center;
+        }
+
+        .value{
+            font-size: 1.5rem;
+            color: $Very-Dark-Gray;
+            font-weight: get-weight('bold');
+            text-align: center;
+        }
+
+        &::after{
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: $Dark-Gray;
+        }
+    }
+
+    @media(min-width:760px){
+        display: flex;
+        justify-content: space-between;
+
+        .details::after{
+            display: none;
+        }
+    }
+}
+
+#map{
+    margin-top: -100px;
+    height: 71vh;
+    width: 100%;
+    background-color: $blue;
+
+    @media(max-width:760px){
+        margin-top: -300px;
+    }
+}
